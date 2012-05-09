@@ -328,6 +328,16 @@ static const NSTimeInterval kTimeoutInterval = 180.0;
 }
 
 /**
+ * cancel the Facebook request
+ */
+- (void)cancel {
+    if (_connection) {
+        [_connection cancel];
+        self.connection = nil;
+    }
+}
+
+/**
  * Free internal structure
  */
 - (void)dealloc {
